@@ -1,0 +1,55 @@
+﻿@model SistemaGestionCitasMedicas.Models.Cita
+
+@{
+    ViewData["Title"] = "Crear Cita";
+}
+
+<h1 class="mb-4">Crear Nueva Cita</h1>
+
+<div class="card shadow-sm">
+    <div class="card-header">
+        Datos de la Cita
+    </div>
+    <div class="card-body">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+            <!-- Campo único para fecha y hora -->
+            <div class="mb-3">
+                <label asp-for="FechaHora" class="form-label">Fecha y Hora</label>
+                <input asp-for="FechaHora" class="form-control" type="datetime-local" step="60" />
+                <span asp-validation-for="FechaHora" class="text-danger"></span>
+            </div>
+
+            <!-- Campo para descripción/nombre de la cita -->
+            <div class="mb-3">
+                <label asp-for="Nombre" class="form-label">Descripción de la cita</label>
+                <input asp-for="Nombre" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="PacienteId" class="form-label">Paciente</label>
+                <select asp-for="PacienteId" class="form-control" asp-items="ViewBag.PacienteId"></select>
+                <span asp-validation-for="PacienteId" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="MedicoId" class="form-label">Médico</label>
+                <select asp-for="MedicoId" class="form-control" asp-items="ViewBag.MedicoId"></select>
+                <span asp-validation-for="MedicoId" class="text-danger"></span>
+            </div>
+
+            <div class="d-flex justify-content-between">
+                <input type="submit" value="💾 Guardar" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary">⬅️ Volver al listado</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

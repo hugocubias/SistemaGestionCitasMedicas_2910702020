@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Inicio";
+}
+
+<div class="text-center mb-5">
+    <h1 class="display-4 fw-bold text-primary">Bienvenido al Sistema de Gestión de Citas Médicas</h1>
+    <p class="lead">Administra pacientes, médicos y citas de manera fácil y organizada.</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4 mb-4">
+        <div class="card shadow-sm text-center h-100">
+            <div class="card-body">
+                <i class="bi bi-person-vcard display-4 text-primary"></i>
+                <h5 class="card-title mt-3">Pacientes</h5>
+                <p class="card-text">Gestiona la información de tus pacientes.</p>
+                <a asp-controller="Pacientes" asp-action="Index" class="btn btn-outline-primary">Ver Pacientes</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+        <div class="card shadow-sm text-center h-100">
+            <div class="card-body">
+                <i class="bi bi-person-badge display-4 text-success"></i>
+                <h5 class="card-title mt-3">Médicos</h5>
+                <p class="card-text">Administra la información de los médicos.</p>
+                <a asp-controller="Medicos" asp-action="Index" class="btn btn-outline-success">Ver Médicos</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+        <div class="card shadow-sm text-center h-100">
+            <div class="card-body">
+                <i class="bi bi-calendar-check display-4 text-danger"></i>
+                <h5 class="card-title mt-3">Citas</h5>
+                <p class="card-text">Organiza y consulta las citas médicas.</p>
+                <a asp-controller="Citas" asp-action="Index" class="btn btn-outline-danger">Ver Citas</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+﻿@model SistemaGestionCitasMedicas.Models.Paciente
+
+@{
+    ViewData["Title"] = "Detalles del Paciente";
+}
+
+<h1 class="mb-4">Detalles del Paciente</h1>
+
+<div class="card shadow-sm">
+    <div class="card-header bg-info text-white">
+        Información del Paciente
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Nombre)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Nombre)</dd>
+
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Edad)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Edad)</dd>
+
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Telefono)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Telefono)</dd>
+        </dl>
+    </div>
+    <div class="card-footer d-flex justify-content-between">
+        <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-primary">✏️ Editar</a>
+        <a asp-action="Index" class="btn btn-secondary">⬅️ Volver al listado</a>
+    </div>
+</div>
